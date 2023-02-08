@@ -1,0 +1,12 @@
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\bin\Debug\net6.0\ApplicationService.deps.json
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\bin\Debug\net6.0\ApplicationService.dll
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\bin\Debug\net6.0\ApplicationService.pdb
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ApplicationService.csproj.AssemblyReference.cache
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ApplicationService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ApplicationService.AssemblyInfoInputs.cache
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ApplicationService.AssemblyInfo.cs
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ApplicationService.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ApplicationService.dll
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\refint\ApplicationService.dll
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ApplicationService.pdb
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService\obj\Debug\net6.0\ref\ApplicationService.dll

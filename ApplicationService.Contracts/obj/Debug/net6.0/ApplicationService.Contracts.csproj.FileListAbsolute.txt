@@ -1,0 +1,12 @@
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\bin\Debug\net6.0\ApplicationService.Contracts.deps.json
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\bin\Debug\net6.0\ApplicationService.Contracts.dll
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\bin\Debug\net6.0\ApplicationService.Contracts.pdb
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ApplicationService.Contracts.csproj.AssemblyReference.cache
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ApplicationService.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ApplicationService.Contracts.AssemblyInfoInputs.cache
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ApplicationService.Contracts.AssemblyInfo.cs
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ApplicationService.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ApplicationService.Contracts.dll
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\refint\ApplicationService.Contracts.dll
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ApplicationService.Contracts.pdb
+C:\Users\Mohammad\Desktop\PersonalProject\ApplicationService.Contracts\obj\Debug\net6.0\ref\ApplicationService.Contracts.dll
