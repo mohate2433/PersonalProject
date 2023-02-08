@@ -15,12 +15,10 @@ namespace ApplicationService.Services
     public class PersonService : IPersonService
     {
         private readonly IPersonRepository _personRepository;
-        private readonly INoteService _noteService;
 
-        public PersonService(IPersonRepository personRepository, INoteService noteService)
+        public PersonService(IPersonRepository personRepository)
         {
             _personRepository = personRepository;
-            _noteService = noteService;
         }
 
         private static List<SelectPersonDto> Convert(List<Person> person)
@@ -39,7 +37,7 @@ namespace ApplicationService.Services
             return dtoList;
         }
 
-        private static EditPersonDto ConvertEdit(Person person)
+        private static EditPersonDto Convert(Person person)
         {
             var editDto = new EditPersonDto();
             editDto.Id = person.Id;
@@ -86,21 +84,12 @@ namespace ApplicationService.Services
 
         public List<SelectPersonDto> GetAll() => PersonService.Convert(_personRepository.GetAll());
 
-        public EditPersonDto GetPerson(int id) => ConvertEdit(_personRepository.GetPerson(id));
+        public EditPersonDto GetPerson(int id) => Convert(_personRepository.GetPerson(id));
 
-        public OprationResult CreatePerson(CreatePersonDto personDto)
-        {
-            throw new NotImplementedException();
-        }
+        public void CreatePerson(CreatePersonDto personDto) => _personRepository.Create(Convert(personDto));
 
-        public OprationResult UpdatePerson(EditPersonDto personDto)
-        {
-            throw new NotImplementedException();
-        }
+        public void UpdatePerson(EditPersonDto personDto) => _personRepository.Update(Convert(personDto));
 
-        public OprationResult DeletePerson(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public void DeletePerson(int id) => _personRepository.DeletePerson(id);
     }
 }

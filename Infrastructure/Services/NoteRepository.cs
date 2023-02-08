@@ -2,6 +2,7 @@
 using Domain.Contract;
 using EntityFramework.Infrastructure.ServiceGeneric;
 using Microsoft.EntityFrameworkCore;
+
 namespace Infrastructure.Services
 {
     public class NoteRepository : Repository<int, Note>, INoteRepository
@@ -12,9 +13,25 @@ namespace Infrastructure.Services
         {
             _context = context;
         }
-        public List<Note> SelectAll()
+
+        public List<Note> GetNotes(int PersonId)
         {
-            return _context.Book.Include(x => x.Person).ToList();
+            using (_context)
+            {
+                try
+                {
+                    return _context.Note.Where(x=>x.PersonId== PersonId).ToList();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _context.Dispose();
+                }
+            }
         }
     }
 }
