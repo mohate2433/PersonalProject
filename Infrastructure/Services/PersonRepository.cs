@@ -75,7 +75,35 @@ namespace Infrastructure.Services
             {
                 try
                 {
-                    return _context.Person.FirstOrDefault(x => x.Email == email);
+                    var person = _context.Person.FirstOrDefault(x => x.Email == email);
+                    if (person != null) return person;
+                    return null;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _context.Dispose();
+                }
+            }
+        }
+        public Person CreatePerson(Person entity)
+        {
+            using (_context)
+            {
+                try
+                {
+                    if (_context.Person.FirstOrDefault(x => x.Email == entity.Email) == null)
+                    {
+                        _context.Set<Person>().Add(entity);
+                        _context.SaveChanges();
+                        return entity;
+                    }
+                    return null;
+
                 }
                 catch (Exception)
                 {

@@ -281,3 +281,8 @@ C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\runti
 C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Application.Api\bin\Debug\net6.0\System.IO.Packaging.dll

@@ -7,7 +7,6 @@
         public DateTime DateModified { get; set; }
         public int Views { get; set; }
         public bool Published { get; set; }
-        public PersonDto? Person { get; set; }
         public int PersonId { get; set; }
     }
 }

@@ -32,16 +32,19 @@ namespace ApplicationService.Services
 
         private static EditPersonDto Convert(Person person)
         {
+            if (person == null)
             {
-                var editDto = new EditPersonDto();
-                editDto.FirstName = person.FirstName;
-                editDto.LastName = person.LastName;
-                editDto.Email = person.Email;
-                editDto.Website = person.Website;
-                editDto.Age = person.Age;
-
-                return editDto;
+                return null;
             }
+            var editDto = new EditPersonDto();
+            editDto.Id = person.Id;
+            editDto.FirstName = person.FirstName;
+            editDto.LastName = person.LastName;
+            editDto.Email = person.Email;
+            editDto.Website = person.Website;
+            editDto.Age = person.Age;
+
+            return editDto;
         }
 
         private static EditPersonDto ConvertEdit(Person person)
@@ -64,7 +67,7 @@ namespace ApplicationService.Services
             editDto.Email = person.Email;
             editDto.Website = person.Website;
             editDto.Age = person.Age;
-            
+
             return editDto;
         }
         private static Person Convert(CreatePersonDto create)
@@ -81,6 +84,7 @@ namespace ApplicationService.Services
         }
         private static CreatePersonDto ConvertCreate(Person person)
         {
+            if (person == null) return null;
             var create = new CreatePersonDto()
             {
                 FirstName = person.FirstName,
@@ -95,6 +99,7 @@ namespace ApplicationService.Services
         {
             var person = new Person()
             {
+                Id = edit.Id,
                 FirstName = edit.FirstName,
                 LastName = edit.LastName,
                 Email = edit.Email,
@@ -108,7 +113,7 @@ namespace ApplicationService.Services
 
         public EditPersonDto GetPerson(int id) => Convert(_personRepository.GetPerson(id));
 
-        public CreatePersonDto CreatePerson(CreatePersonDto personDto) => ConvertCreate(_personRepository.Create(Convert(personDto)));
+        public CreatePersonDto CreatePerson(CreatePersonDto personDto) => ConvertCreate(_personRepository.CreatePerson(Convert(personDto)));
 
         public EditPersonDto UpdatePerson(EditPersonDto personDto) => ConvertEdit(_personRepository.Update(Convert(personDto)));
 

@@ -19,10 +19,11 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
             {
                 try
                 {
-
+                    
                     _context.Set<T>().Add(entity);
                     _context.SaveChanges();
                     return entity;
+
                 }
                 catch (Exception)
                 {

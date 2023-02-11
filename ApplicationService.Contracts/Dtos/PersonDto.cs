@@ -10,7 +10,6 @@ namespace ApplicationService.Dtos
         public string? Email { get; set; }
         public int Age { get; set; }
         public string? Website { get; set; }
-        public List<SelectNoteDto>? Notes { get; set; }
         public string? FullName { get { return FirstName + " " + LastName; } }
 
     }

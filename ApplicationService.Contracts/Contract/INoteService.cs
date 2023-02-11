@@ -11,9 +11,10 @@ namespace ApplicationService.Contracts.Contract
     public interface INoteService
     {
         List<SelectNoteDto> GetNotes(int personId);
+        List<SelectNoteDto> GetAll();
         EditNoteDto GetNote(int id);
-        void CreateNote(CreateNoteDto noteDto);
-        void UpdateNote(EditNoteDto noteDto);
-        void DeleteNote(int id);
+        CreateNoteDto CreateNote(CreateNoteDto noteDto);
+        EditNoteDto UpdateNote(EditNoteDto noteDto);
+        DeleteNoteDto DeleteNote(int id);
     }
 }

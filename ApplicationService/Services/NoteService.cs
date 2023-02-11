@@ -47,6 +47,39 @@ namespace ApplicationService.Services
 
             return editDto;
         }
+        private static EditNoteDto ConvertEdit(Note note)
+        {
+            var editDto = new EditNoteDto();
+            editDto.Contente = note.Contente;
+            editDto.DateCreated = note.DateCreated;
+            editDto.DateModified = note.DateModified;
+            editDto.Views = note.Views;
+            editDto.PersonId = note.PersonId;
+
+            return editDto;
+        }
+        private static CreateNoteDto ConvertCreate(Note note)
+        {
+            var createDto = new CreateNoteDto();
+            createDto.Contente = note.Contente;
+            createDto.DateCreated = note.DateCreated;
+            createDto.DateModified = note.DateModified;
+            createDto.Views = note.Views;
+            createDto.PersonId = note.PersonId;
+
+            return createDto;
+        }
+        private static DeleteNoteDto ConvertDelete(Note note)
+        {
+            var deleteDto = new DeleteNoteDto();
+            deleteDto.Contente = note.Contente;
+            deleteDto.DateCreated = note.DateCreated;
+            deleteDto.DateModified = note.DateModified;
+            deleteDto.Views = note.Views;
+            deleteDto.PersonId = note.PersonId;
+
+            return deleteDto;
+        }
 
         private static Note Convert(EditNoteDto edit)
         {
@@ -78,13 +111,14 @@ namespace ApplicationService.Services
 
 
         public List<SelectNoteDto> GetNotes(int personId) =>NoteService.Convert(_noteRepository.GetNotes(personId));
+        public List<SelectNoteDto> GetAll() =>NoteService.Convert(_noteRepository.GetAll());
 
         public EditNoteDto GetNote(int id) => Convert(_noteRepository.Get(id));
 
-        public void UpdateNote(EditNoteDto noteDto) => _noteRepository.Update(Convert(noteDto));
+        public EditNoteDto UpdateNote(EditNoteDto noteDto) => ConvertEdit(_noteRepository.Update(Convert(noteDto)));
        
-        public void CreateNote(CreateNoteDto noteDto) => _noteRepository.Create(Convert(noteDto));
+        public CreateNoteDto CreateNote(CreateNoteDto noteDto) => ConvertCreate(_noteRepository.Create(Convert(noteDto)));
 
-        public void DeleteNote(int id) => _noteRepository.Delete(id);
+        public DeleteNoteDto DeleteNote(int id) => ConvertDelete(_noteRepository.Delete(id));
     }
 }
