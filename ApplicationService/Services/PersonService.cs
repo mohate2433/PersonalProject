@@ -1,14 +1,7 @@
 ﻿using ApplicationService.Contracts.Contract;
-using ApplicationService.Dtos.BookDtos;
 using ApplicationService.Dtos.PersonDtos;
 using Domain.Aggregates;
 using Domain.Contract;
-using EntityFramework.Application;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApplicationService.Services
 {
@@ -39,21 +32,38 @@ namespace ApplicationService.Services
 
         private static EditPersonDto Convert(Person person)
         {
-            var editDto = new EditPersonDto();
-            editDto.Id = person.Id;
+            {
+                var editDto = new EditPersonDto();
+                editDto.FirstName = person.FirstName;
+                editDto.LastName = person.LastName;
+                editDto.Email = person.Email;
+                editDto.Website = person.Website;
+                editDto.Age = person.Age;
+
+                return editDto;
+            }
+        }
+
+        private static EditPersonDto ConvertEdit(Person person)
+        {
+            var create = new EditPersonDto()
+            {
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                Email = person.Email,
+                Website = person.Website,
+                Age = person.Age
+            };
+            return create;
+        }
+        private static DeletePersonDto ConvertDelete(Person person)
+        {
+            var editDto = new DeletePersonDto();
             editDto.FirstName = person.FirstName;
             editDto.LastName = person.LastName;
             editDto.Email = person.Email;
             editDto.Website = person.Website;
             editDto.Age = person.Age;
-            for (int i = 0; i < person.Notes.Count; i++)
-            {
-                editDto.Notes[i].Id = person.Notes[i].Id;
-                editDto.Notes[i].Contente = person.Notes[i].Contente;
-                editDto.Notes[i].DateCreated = person.Notes[i].DateCreated;
-                editDto.Notes[i].DateModified = person.Notes[i].DateModified;
-                editDto.Notes[i].Views = person.Notes[i].Views;
-            }
             
             return editDto;
         }
@@ -68,6 +78,18 @@ namespace ApplicationService.Services
                 Age = create.Age
             };
             return person;
+        }
+        private static CreatePersonDto ConvertCreate(Person person)
+        {
+            var create = new CreatePersonDto()
+            {
+                FirstName = person.FirstName,
+                LastName = person.LastName,
+                Email = person.Email,
+                Website = person.Website,
+                Age = person.Age
+            };
+            return create;
         }
         private static Person Convert(EditPersonDto edit)
         {
@@ -86,10 +108,12 @@ namespace ApplicationService.Services
 
         public EditPersonDto GetPerson(int id) => Convert(_personRepository.GetPerson(id));
 
-        public void CreatePerson(CreatePersonDto personDto) => _personRepository.Create(Convert(personDto));
+        public CreatePersonDto CreatePerson(CreatePersonDto personDto) => ConvertCreate(_personRepository.Create(Convert(personDto)));
 
-        public void UpdatePerson(EditPersonDto personDto) => _personRepository.Update(Convert(personDto));
+        public EditPersonDto UpdatePerson(EditPersonDto personDto) => ConvertEdit(_personRepository.Update(Convert(personDto)));
 
-        public void DeletePerson(int id) => _personRepository.DeletePerson(id);
+        public DeletePersonDto DeletePerson(int id) => ConvertDelete(_personRepository.DeletePerson(id));
+
+        public EditPersonDto GetPerson(string email) => Convert(_personRepository.GetPersonEmail(email));
     }
 }

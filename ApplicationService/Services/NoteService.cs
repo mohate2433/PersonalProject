@@ -35,15 +35,15 @@ namespace ApplicationService.Services
             }
             return dtoList;
         }
-        private static EditPersonDto Convert(Note note)
+        private static EditNoteDto Convert(Note note)
         {
-            var editDto = new EditPersonDto();
+            var editDto = new EditNoteDto();
             editDto.Id = note.Id;
-            editDto.FirstName = note.FirstName;
-            editDto.LastName = note.LastName;
-            editDto.Email = note.Email;
-            editDto.Website = note.Website;
-            editDto.Age = note.Age;
+            editDto.Contente = note.Contente;
+            editDto.DateCreated = note.DateCreated;
+            editDto.DateModified = note.DateModified;
+            editDto.Views = note.Views;
+            editDto.PersonId = note.PersonId;
 
             return editDto;
         }
@@ -78,11 +78,8 @@ namespace ApplicationService.Services
 
 
         public List<SelectNoteDto> GetNotes(int personId) =>NoteService.Convert(_noteRepository.GetNotes(personId));
-       
-        public EditNoteDto GetNote(int id)
-        {
-            throw new NotImplementedException();
-        }
+
+        public EditNoteDto GetNote(int id) => Convert(_noteRepository.Get(id));
 
         public void UpdateNote(EditNoteDto noteDto) => _noteRepository.Update(Convert(noteDto));
        

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using ApplicationService.Dtos.BookDtos;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApplicationService.Dtos
 {
@@ -9,7 +10,7 @@ namespace ApplicationService.Dtos
         public string? Email { get; set; }
         public int Age { get; set; }
         public string? Website { get; set; }
-        public List<NoteDto>? Notes { get; set; }
+        public List<SelectNoteDto>? Notes { get; set; }
         public string? FullName { get { return FirstName + " " + LastName; } }
 
     }

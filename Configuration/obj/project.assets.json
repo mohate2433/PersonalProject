@@ -783,6 +783,34 @@
           }
         }
       },
+      "ApplicationService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ApplicationService.Contracts": "1.0.0",
+          "Domain": "1.0.0",
+          "EntityFramework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ApplicationService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApplicationService.dll": {}
+        }
+      },
+      "ApplicationService.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EntityFramework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ApplicationService.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApplicationService.Contracts.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -816,6 +844,8 @@
           "Domain": "1.0.0",
           "EntityFramework": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.13",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.13",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.13",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
         "compile": {
@@ -2046,6 +2076,16 @@
         "version.txt"
       ]
     },
+    "ApplicationService/1.0.0": {
+      "type": "project",
+      "path": "../ApplicationService/ApplicationService.csproj",
+      "msbuildProject": "../ApplicationService/ApplicationService.csproj"
+    },
+    "ApplicationService.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../ApplicationService.Contracts/ApplicationService.Contracts.csproj",
+      "msbuildProject": "../ApplicationService.Contracts/ApplicationService.Contracts.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -2064,6 +2104,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "ApplicationService >= 1.0.0",
+      "ApplicationService.Contracts >= 1.0.0",
       "Domain >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.13",
@@ -2104,6 +2146,12 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Mohammad\\Desktop\\PersonalProject\\ApplicationService.Contracts\\ApplicationService.Contracts.csproj": {
+              "projectPath": "C:\\Users\\Mohammad\\Desktop\\PersonalProject\\ApplicationService.Contracts\\ApplicationService.Contracts.csproj"
+            },
+            "C:\\Users\\Mohammad\\Desktop\\PersonalProject\\ApplicationService\\ApplicationService.csproj": {
+              "projectPath": "C:\\Users\\Mohammad\\Desktop\\PersonalProject\\ApplicationService\\ApplicationService.csproj"
+            },
             "C:\\Users\\Mohammad\\Desktop\\PersonalProject\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\Mohammad\\Desktop\\PersonalProject\\Domain\\Domain.csproj"
             },

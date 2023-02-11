@@ -13,7 +13,7 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
             _context = context;
         }
 
-        public void Create(T entity)
+        public T Create(T entity)
         {
             using (_context)
             {
@@ -22,6 +22,7 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
 
                     _context.Set<T>().Add(entity);
                     _context.SaveChanges();
+                    return entity;
                 }
                 catch (Exception)
                 {
@@ -35,7 +36,7 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
             }
         }
 
-        public void Delete(Tkey id)
+        public T Delete(Tkey id)
         {
             using (_context)
             {
@@ -44,6 +45,7 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
                     var entity = _context.Set<T>().Find(id);
                     _context.Entry(entity).State = EntityState.Deleted;
                     _context.SaveChanges();
+                    return entity;
                 }
                 catch (Exception)
                 {
@@ -118,7 +120,7 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
             }
         }
 
-        public void Update(T entity)
+        public T Update(T entity)
         {
             using (_context)
             {
@@ -126,6 +128,7 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
                 {
                     _context.Entry(entity).State = EntityState.Modified;
                     _context.SaveChanges();
+                    return entity;
                 }
                 catch (Exception)
                 {

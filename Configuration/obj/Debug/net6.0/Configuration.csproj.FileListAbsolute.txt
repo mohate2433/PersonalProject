@@ -19,3 +19,7 @@ C:\Users\Mohammad\Desktop\PersonalProject\Configuration\obj\Debug\net6.0\refint\
 C:\Users\Mohammad\Desktop\PersonalProject\Configuration\obj\Debug\net6.0\Configuration.pdb
 C:\Users\Mohammad\Desktop\PersonalProject\Configuration\obj\Debug\net6.0\Configuration.genruntimeconfig.cache
 C:\Users\Mohammad\Desktop\PersonalProject\Configuration\obj\Debug\net6.0\ref\Configuration.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Configuration\bin\Debug\net6.0\ApplicationService.Contracts.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Configuration\bin\Debug\net6.0\ApplicationService.dll
+C:\Users\Mohammad\Desktop\PersonalProject\Configuration\bin\Debug\net6.0\ApplicationService.Contracts.pdb
+C:\Users\Mohammad\Desktop\PersonalProject\Configuration\bin\Debug\net6.0\ApplicationService.pdb

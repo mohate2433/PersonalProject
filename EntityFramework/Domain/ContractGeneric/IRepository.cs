@@ -6,9 +6,9 @@ namespace EntityFramework.GenericEfCore.Contract
     {
         List<T> GetAll();
         T Get(Tkey id);
-        void Delete(Tkey id);
-        void Create(T entity);
-        void Update(T entity);
+        T Delete(Tkey id);
+        T Create(T entity);
+        T Update(T entity);
         bool Exists(Expression<Func<T, bool>> expression);
     }
 }
