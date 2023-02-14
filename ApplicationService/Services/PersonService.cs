@@ -115,10 +115,7 @@ namespace ApplicationService.Services
         }
         private static DeletePersonDto ConvertDelete(Person person)
         {
-            if (person== null)
-            {
-                return null;
-            }
+            if (person== null) return null;
             var editDto = new DeletePersonDto();
             editDto.FirstName = person.FirstName;
             editDto.LastName = person.LastName;
