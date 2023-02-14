@@ -1,8 +1,8 @@
-﻿using Application.Api.Hubs;
-using ApplicationService.Contracts.Contract;
+﻿using ApplicationService.Contracts.Contract;
 using ApplicationService.Dtos;
 using ApplicationService.Dtos.PersonDtos;
 using Domain.Aggregates;
+using Infrastructure.Hubs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 
@@ -25,6 +25,7 @@ namespace Application.Api.Controllers
         }
         [HttpGet]
         public IActionResult GetAllPerson() => Json(_personService.GetAll());
+
         [HttpGet]
         [Route("{id}")]
         public IActionResult GetPerson(int id) => Json(_personService.GetPerson(id));

@@ -15,7 +15,7 @@ namespace Infrastructure.Bootstrapper
             services.AddTransient<INoteRepository, NoteRepository>();
 
             services.AddTransient<IPersonService, PersonService>();
-            services.AddTransient<INoteRepository, NoteRepository>();
+            services.AddTransient<INoteService, NoteService>();
 
 
             services.AddDbContext<PersonalDbContext>(x => x.UseSqlServer(connectionString));

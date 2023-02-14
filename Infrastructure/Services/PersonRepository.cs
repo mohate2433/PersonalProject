@@ -19,10 +19,10 @@ namespace Infrastructure.Services
             {
                 try
                 {
-                    List<Note> note = _context.Note.Where(x => x.PersonId == id).ToList();
                     var deletePerson = _context.Person.FirstOrDefault(x => x.Id == id);
                     if (deletePerson != null)
                     {
+                        List<Note> note = _context.Note.Where(x => x.PersonId == id).ToList();
                         if (note != null)
                         {
                             for (int i = 0; i < note.Count; i++)
@@ -31,11 +31,32 @@ namespace Infrastructure.Services
                                 _context.SaveChanges();
                             }
                         }
+                        _context.Entry(deletePerson).State = EntityState.Deleted;
+                        _context.SaveChanges();
+                        return deletePerson;
                     }
-                    _context.Entry(deletePerson).State = EntityState.Deleted;
-                    _context.SaveChanges();
-                    return deletePerson;
+                    return null;
+                }
+                catch (Exception)
+                {
 
+                    throw;
+                }
+                finally
+                {
+                    _context.Dispose();
+                }
+            }
+        }
+
+        public List<Person> GetAllPerson()
+        {
+            using (_context)
+            {
+                try
+                {
+
+                    return _context.Set<Person>().Include(x => x.Notes).ToList();
                 }
                 catch (Exception)
                 {
@@ -96,7 +117,7 @@ namespace Infrastructure.Services
             {
                 try
                 {
-                    if (_context.Person.FirstOrDefault(x => x.Email == entity.Email) == null)
+                    if (_context.Person.FirstOrDefault(x => x.Email == entity.Email && x.Id != entity.Id) == null)
                     {
                         _context.Set<Person>().Add(entity);
                         _context.SaveChanges();
@@ -104,6 +125,29 @@ namespace Infrastructure.Services
                     }
                     return null;
 
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    _context.Dispose();
+                }
+            }
+        }
+        public Person UpdatePerson(Person entity)
+        {
+            using (_context)
+            {
+                try
+                {
+                    if (_context.Person.FirstOrDefault(x => x.Email == entity.Email && x.Id != entity.Id) != null)
+                        return null;
+                    _context.Entry(entity).State = EntityState.Modified;
+                    _context.SaveChanges();
+                    return entity;
                 }
                 catch (Exception)
                 {

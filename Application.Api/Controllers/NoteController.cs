@@ -1,8 +1,6 @@
-﻿using Application.Api.Hubs;
-using ApplicationService.Contracts.Contract;
+﻿using ApplicationService.Contracts.Contract;
 using ApplicationService.Dtos.BookDtos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
 
 namespace Application.Api.Controllers
 {
@@ -11,21 +9,19 @@ namespace Application.Api.Controllers
     public class NoteController : Controller
     {
         private readonly INoteService _noteService;
-        private readonly IHubContext<SignalHub> _hubContext;
-        private readonly ILogger<NoteController> _logger;
 
-
-        public NoteController(INoteService noteService, IHubContext<SignalHub> hubContext, ILogger<NoteController> logger)
+        public NoteController(INoteService noteService)
         {
             _noteService = noteService;
-            _hubContext = hubContext;
-            _logger = logger;
         }
+
         [HttpGet]
         public IActionResult GetAllNote() => Json(_noteService.GetAll());
+
         [HttpGet]
         [Route("{id}")]
         public IActionResult GetAllNotes(int id) => Json(_noteService.GetNotes(id));
+
         [HttpGet]
         [Route("{id}")]
         public IActionResult GetNote(int id) => Json(_noteService.GetNote(id));

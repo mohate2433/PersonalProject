@@ -44,9 +44,13 @@ namespace EntityFramework.Infrastructure.ServiceGeneric
                 try
                 {
                     var entity = _context.Set<T>().Find(id);
-                    _context.Entry(entity).State = EntityState.Deleted;
-                    _context.SaveChanges();
-                    return entity;
+                    if (entity != null)
+                    {
+                        _context.Entry(entity).State = EntityState.Deleted;
+                        _context.SaveChanges();
+                        return entity;
+                    }
+                    return null;
                 }
                 catch (Exception)
                 {

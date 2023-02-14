@@ -1,5 +1,5 @@
-using Application.Api.Hubs;
 using Infrastructure.Bootstrapper;
+using Infrastructure.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 

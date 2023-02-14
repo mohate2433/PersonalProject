@@ -6,9 +6,11 @@ namespace Domain.Contract
 {
     public interface IPersonRepository : IRepository<int, Person>
     {
+        List<Person> GetAllPerson();
         Person GetPerson(int id);
-        public Person CreatePerson(Person entity);
-        Person GetPersonEmail(string email);
+        Person CreatePerson(Person entity);
+        Person UpdatePerson(Person entity);
         Person DeletePerson(int id);
+
     }
 }
